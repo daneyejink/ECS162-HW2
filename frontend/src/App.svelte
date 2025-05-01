@@ -1,21 +1,19 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import svelteLogo from './assets/svelte.svg';
-  import viteLogo from '/vite.svg';
-  import Counter from './lib/Counter.svelte';
+ 
 
   let apiKey: string = '';
   let articles: any[] = [];
   let currentDate: string = '';
 
-  /*function getCurrentDate(): string {
+  function getCurrentDate(): string {
     const today = new Date();
     const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return today.toLocaleDateString('en-US', options); // e.g., "Wednesday, April 16, 2025"
-  }*/
+  }
 
   onMount(async () => {
-    //currentDate = getCurrentDate();
+    currentDate = getCurrentDate();
     await fetchArticles();
     try {
       const res = await fetch('/api/key'); // Make request to backend for API key
@@ -43,7 +41,7 @@
   <header>
     <h1 class="logo">The New York Times</h1>
     <div class="date-header">
-      
+      <div class="date">{currentDate}</div>
       <div class="today-label">Today's Paper</div>
     </div>
     <hr class="headline-divider">
@@ -105,20 +103,3 @@
 </main>
 
 
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
