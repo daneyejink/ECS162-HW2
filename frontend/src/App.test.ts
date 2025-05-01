@@ -7,7 +7,7 @@ import { fetchArticles } from './lib/api';
 test('App displays correct title', async () => {
     const { getByText } = render(App);
     const title = getByText('The New York Times');
-    expect(getByText('The New York Times')).toBeDefined();
+    expect(title).toBeTruthy(); // Asserts that the title is present in the DOM
 });
 
 test('API returns the correct API key', async () => {
@@ -29,10 +29,9 @@ test('NYT API returns articles in expected format', async () => {
         ],
     };
     // Fake the fetch call
-    vi.spyOn(global, 'fetch').mockResolvedValueOnce({
+    vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce({
         json: async () => fakeResponse,
     });
-
     const data = await fetchArticles();
     // Check if it gave back the fake data
     expect(data).toEqual(fakeResponse.results);
