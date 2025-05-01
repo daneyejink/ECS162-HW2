@@ -58,6 +58,13 @@
           {/if}
           <p class="meta">5 min read</p>
           <hr />
+          {#if article.web_url}
+          <a href={article.web_url} target="_blank" rel="noopener noreferrer">
+          Read full article
+          </a>
+          {:else}
+          <p>No URL available for this article</p>
+        {/if}
         </article>
       {/each}
     </section>
@@ -72,6 +79,13 @@
           {/if}
           <p class="meta">5 min read</p>
           <hr />
+          {#if article.web_url}
+          <a href={article.web_url} target="_blank" rel="noopener noreferrer">
+          Read full article
+          </a>
+          {:else}
+          <p>No URL available for this article</p>
+        {/if}
         </article>
       {/each}
     </section>
@@ -86,6 +100,13 @@
           {/if}
           <p class="meta">5 min read</p>
           <hr />
+          {#if article.web_url}
+          <a href={article.web_url} target="_blank" rel="noopener noreferrer">
+          Read full article
+          </a>
+          {:else}
+          <p>No URL available for this article</p>
+        {/if}
         </article>
       {/each}
     </section>
