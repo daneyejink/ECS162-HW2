@@ -11,9 +11,10 @@ test('App displays correct title', async () => {
 });
 
 test('App displays current date', () => {
-   
-    const { getByText } = render(App);
-    const date = getByText(today);
+    const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+    const { findByText } = render(App);
+    const date = findByText(today);
     expect(date).toBeTruthy();
 });
 
