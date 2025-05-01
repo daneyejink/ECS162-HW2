@@ -10,6 +10,14 @@ test('App displays correct title', async () => {
     expect(title).toBeTruthy();
 });
 
+test('App displays current date', () => {
+   
+    const { getByText } = render(App);
+    const date = getByText(today);
+    expect(date).toBeTruthy();
+});
+
+
 test('API returns the correct API key', async () => {
     const response = await fetch('http://localhost:8000/api/key'); 
     const data = await response.json();
@@ -29,10 +37,10 @@ test('NYT API returns articles in expected format', async () => {
         ],
     };
    // Stub the fetch function
-   vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce({
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValueOnce({
     json: async () => fakeResponse,
 }));
 
-const data = await fetchArticles();
-expect(data).toEqual(fakeResponse.results); // Verify the returned data matches
+    const data = await fetchArticles();
+    expect(data).toEqual(fakeResponse.results); // Verify the returned data matches
 });
