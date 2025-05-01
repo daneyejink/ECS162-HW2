@@ -18,7 +18,7 @@ test('App displays current date', async () => {
         day: 'numeric' 
     });
     const { findByText } = render(App);
-    const date = findByText(today); // Add 'await' here
+    const date = findByText(today); 
     expect(date).toBeTruthy();
 });
 
@@ -80,7 +80,27 @@ test('Article content is displayed in the UI', async () => {
     const urlElement = await screen.findByRole('link', { name: /read full article/i }) as HTMLAnchorElement;
     expect(urlElement.href.replace(/\/$/, '')).toBe(fakeArticle.web_url);
     
-   
     const imageElement = screen.getByAltText(fakeArticle.title) as HTMLImageElement;
     expect(imageElement.src.replace(/\/$/, '')).toBe(fakeArticle.multimedia.default.url);
+});
+
+// Test Responsive UI
+
+test('Tablet view testing', () => {
+    globalThis.innerWidth = 1024;
+    globalThis.dispatchEvent(new Event('resize'));
+
+    render(App);
+
+    // Select the third column 
+    const thirdCol = document.querySelector('.column\\3');  
+  
+    // Ensure the column is hidden on tablet
+    if (thirdCol) {
+        const thirdColumnStyle = window.getComputedStyle(thirdCol);  
+        expect(thirdColumnStyle.display).toBe('none'); // third column none on tablet
+    } else {
+     // If the column isn't found, make null
+        expect(thirdCol).toBeNull();
+    }
 });

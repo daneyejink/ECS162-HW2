@@ -48,7 +48,7 @@
   </header>
 
   <div class="content">
-    <section class="column">
+    <section class="column 1">
       {#each articles.slice(0, 3) as article}
         <article class="article">
           <h2>{article.title}</h2>
@@ -73,7 +73,7 @@
       {/each}
     </section>
 
-    <section class="column">
+    <section class="column 2">
       {#each articles.slice(3, 5) as article}
         <article class="article">
           <h2>{article.title}</h2>
@@ -98,7 +98,7 @@
       {/each}
     </section>
 
-    <section class="column">
+    <section class="column 3">
       {#each articles.slice(5, 7) as article}
         <article class="article">
           <h2>{article.title}</h2>
