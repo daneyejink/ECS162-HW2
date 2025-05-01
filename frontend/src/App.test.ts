@@ -56,7 +56,11 @@ test('Article content is displayed in the UI', async () => {
     const fakeArticle = {
         title: 'Test Article Title',
         web_url: 'http://test-article-url.com',
-        multimedia: [{ url: 'http://test-image.com' }],
+        multimedia: {
+            default: { 
+                url: 'http://test-image.com' 
+            }
+        },
         abstract: 'Test article abstract',
     };
     
@@ -72,8 +76,11 @@ test('Article content is displayed in the UI', async () => {
 
     const abstractElement = await screen.findByText(fakeArticle.abstract);
     expect(abstractElement).toBeTruthy();
+
     const urlElement = await screen.findByRole('link', { name: /read full article/i }) as HTMLAnchorElement;
     expect(urlElement.href.replace(/\/$/, '')).toBe(fakeArticle.web_url);
-
     
+   
+    const imageElement = screen.getByAltText(fakeArticle.title) as HTMLImageElement;
+    expect(imageElement.src.replace(/\/$/, '')).toBe(fakeArticle.multimedia.default.url);
 });
