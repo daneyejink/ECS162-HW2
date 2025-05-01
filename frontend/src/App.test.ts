@@ -11,7 +11,7 @@ test('App displays correct title', async () => {
 });
 
 test('API returns the correct API key', async () => {
-    const response = await fetch('/api/key'); 
+    const response = await fetch('http://localhost:8000/api/key'); 
     const data = await response.json();
     expect(data.apiKey).toBe('LOZOPnWO4QHFWH335ZCsoPYBwMJCOXZu'); 
   });
