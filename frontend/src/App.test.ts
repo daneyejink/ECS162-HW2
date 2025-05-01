@@ -65,4 +65,9 @@ test('Article content is displayed in the UI', async () => {
 
     const titleElement = await screen.findByText(fakeArticle.title);
     expect(titleElement).toBeTruthy();
+
+    const urlElement = await screen.findByRole('link', { name: /read full article/i });
+    expect(urlElement).toHaveAttribute('href', fakeArticle.web_url);
+
+    
 });

@@ -53,18 +53,22 @@
         <article class="article">
           <h2>{article.title}</h2>
           <p>{article.abstract}</p>
+
           {#if article.multimedia && article.multimedia.default}
           <img src={article.multimedia.default.url} alt={article.title} />
           {/if}
+
           <p class="meta">5 min read</p>
-          <hr />
+
           {#if article.web_url}
-          <a href={article.web_url} target="_blank" rel="noopener noreferrer">
+          <a href={article.web_url} target="_blank" rel="noopener noreferrer" class="readMore-link">
           Read full article
           </a>
           {:else}
-          <p>No URL available for this article</p>
+          <p>No URL available</p>
         {/if}
+
+        <hr />
         </article>
       {/each}
     </section>
@@ -74,18 +78,22 @@
         <article class="article">
           <h2>{article.title}</h2>
           <p>{article.abstract}</p>
+
           {#if article.multimedia && article.multimedia.default}
           <img src={article.multimedia.default.url} alt={article.title} />
           {/if}
+
           <p class="meta">5 min read</p>
-          <hr />
+  
           {#if article.web_url}
-          <a href={article.web_url} target="_blank" rel="noopener noreferrer">
+          <a href={article.web_url} target="_blank" rel="noopener noreferrer" class="readMore-link">
           Read full article
           </a>
           {:else}
           <p>No URL available for this article</p>
         {/if}
+
+        <hr />
         </article>
       {/each}
     </section>
@@ -95,18 +103,22 @@
         <article class="article">
           <h2>{article.title}</h2>
           <p>{article.abstract}</p>
+
           {#if article.multimedia && article.multimedia.default}
           <img src={article.multimedia.default.url} alt={article.title} />
           {/if}
+
           <p class="meta">5 min read</p>
-          <hr />
+         
           {#if article.web_url}
-          <a href={article.web_url} target="_blank" rel="noopener noreferrer">
+          <a href={article.web_url} target="_blank" rel="noopener noreferrer" class="readMore-link">
           Read full article
           </a>
           {:else}
           <p>No URL available for this article</p>
         {/if}
+
+        <hr />
         </article>
       {/each}
     </section>

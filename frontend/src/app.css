@@ -173,6 +173,12 @@ header {
   margin-bottom: 10px;
 }
 
+.readMore-link {
+  font-size: 0.8rem; /* Adjust this value to make it smaller */
+  color: #007BFF; /* Optional: Customize the color */
+  text-decoration: underline; /* Optional: Remove underline */
+}
+
 /* footer styling */
 footer {
   padding: 20px 0;  
