@@ -16,7 +16,7 @@
     currentDate = getCurrentDate();
     await fetchArticles();
     try {
-      const res = await fetch('/api/key'); // Make request to backend for API key
+      const res = await fetch('http://localhost:8000/api/key'); // Make request to backend for API key
       const data = await res.json(); // Parse the response as JSON
       apiKey = data.apiKey; // Store the API key
     } catch (error) { // Call function to fetch articles after API key is retrieved
@@ -27,7 +27,7 @@
   // Function to fetch articles from backend (which fetches from NYT)
   const fetchArticles = async () => {
     try{
-      const res = await fetch('/api/articles'); // Make request to backend for articles
+      const res = await fetch('http://localhost:8000/api/articles'); // Make request to backend for articles
       const data = await res.json(); // Parse the response as JSON
       articles = data.results; // Results key contains articles
       console.log("First article's multimedia:", articles[0]?.multimedia);
