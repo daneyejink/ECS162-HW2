@@ -85,7 +85,6 @@ test('Article content is displayed in the UI', async () => {
 });
 
 // Test Responsive UI
-
 test('Tablet view testing', () => {
     globalThis.innerWidth = 1024;
     globalThis.dispatchEvent(new Event('resize'));
@@ -104,3 +103,21 @@ test('Tablet view testing', () => {
         expect(thirdCol).toBeNull();
     }
 });
+
+test('Mobile view testing', () => {
+    globalThis.innerWidth = 768;
+    globalThis.dispatchEvent(new Event('resize'));
+    render (App);
+
+    const secCol = document.querySelector('.column\\2');  
+  
+    // Ensure the column is hidden on mobile device
+    if (secCol) {
+        const secColumnStyle = window.getComputedStyle(secCol);  
+        expect(secColumnStyle.display).toBe('none'); // second column none on tablet
+    } else {
+     // If the column isn't found, make null
+        expect(secCol).toBeNull();
+    }
+});
+  
