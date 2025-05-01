@@ -62,7 +62,7 @@
 
           {#if article.web_url}
           <a href={article.web_url} target="_blank" rel="noopener noreferrer" class="readMore-link">
-          Read full article
+          read full article
           </a>
           {:else}
           <p>No URL available</p>
@@ -87,10 +87,10 @@
   
           {#if article.web_url}
           <a href={article.web_url} target="_blank" rel="noopener noreferrer" class="readMore-link">
-          Read full article
+          read full article
           </a>
           {:else}
-          <p>No URL available for this article</p>
+          <p>No URL available</p>
         {/if}
 
         <hr />
@@ -112,10 +112,10 @@
          
           {#if article.web_url}
           <a href={article.web_url} target="_blank" rel="noopener noreferrer" class="readMore-link">
-          Read full article
+          read full article
           </a>
           {:else}
-          <p>No URL available for this article</p>
+          <p>No URL available</p>
         {/if}
 
         <hr />
