@@ -5,6 +5,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig(({ mode }) => ({
   plugins: [svelte()],
   test: {
+    globals: true,
     environment: 'jsdom',  // Ensure you use jsdom environment for testing
   },
   resolve: {
