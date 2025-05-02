@@ -6,10 +6,10 @@ export default defineConfig(({ mode }) => ({
   plugins: [svelte()],
   test: {
     globals: true,
-    environment: 'jsdom',  // Ensure you use jsdom environment for testing
+    environment: 'jsdom',  
   },
   resolve: {
-    conditions: process.env.VITEST ? ['browser'] : undefined,  // Ensure conditions are handled properly
+    conditions: process.env.VITEST ? ['browser'] : undefined,  
   },
   server: mode === 'development' ? {
     proxy: {

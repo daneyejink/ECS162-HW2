@@ -4,6 +4,15 @@ import App from './App.svelte';
 import { fetchArticles } from './lib/api';
 
 
+test('Backend returns correct API key', async () => {
+    const expectedApiKey = process.env.API_KEY;
+    const res = await fetch('http://localhost:8000/api/key');
+    const data = await res.json();
+    expect(data.apiKey).toBe(expectedApiKey);
+  });
+  
+  
+
 test('App displays correct title', async () => {
     const { getByText } = render(App);
     const title = getByText('The New York Times');
