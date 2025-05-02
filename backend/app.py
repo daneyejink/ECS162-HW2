@@ -27,7 +27,6 @@ def get_articles():
     try:
         response = requests.get(url)
         data = response.json()
-        print("Fetched data:", data)  
 
         # Filter articles that mention "Davis" or "Sacramento" in the title
         filtered_articles = [
