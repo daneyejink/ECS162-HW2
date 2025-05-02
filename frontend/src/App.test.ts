@@ -29,6 +29,7 @@ test('API returns the correct API key', async () => {
     expect(data.apiKey).toBe('LOZOPnWO4QHFWH335ZCsoPYBwMJCOXZu'); 
   });
   
+  
 // Ensure articles are returned in the expected format from the NYT API
 test('NYT API returns articles in expected format', async () => {
     const fakeResponse = {
@@ -47,7 +48,7 @@ test('NYT API returns articles in expected format', async () => {
 }));
 
     const data = await fetchArticles();
-    expect(data).toEqual(fakeResponse.results); // Verify the returned data matches
+    expect(data).toEqual(fakeResponse.results); 
 });
 
 
