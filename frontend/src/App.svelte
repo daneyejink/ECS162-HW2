@@ -51,7 +51,7 @@
     <section class="column 1">
       {#each articles.slice(0, 3) as article}
         <article class="article">
-          <h2>{article.title}</h2>
+          <h2>{article.headline.main}</h2>
           <p>{article.abstract}</p>
 
           {#if article.multimedia && article.multimedia.default}
@@ -76,7 +76,7 @@
     <section class="column 2">
       {#each articles.slice(3, 5) as article}
         <article class="article">
-          <h2>{article.title}</h2>
+          <h2>{article.headline.main}</h2>
           <p>{article.abstract}</p>
 
           {#if article.multimedia && article.multimedia.default}
@@ -101,7 +101,7 @@
     <section class="column 3">
       {#each articles.slice(5, 7) as article}
         <article class="article">
-          <h2>{article.title}</h2>
+          <h2>{article.headline.main}</h2>
           <p>{article.abstract}</p>
 
           {#if article.multimedia && article.multimedia.default}
